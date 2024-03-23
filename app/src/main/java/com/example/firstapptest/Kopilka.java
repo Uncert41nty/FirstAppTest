@@ -13,6 +13,7 @@ public class Kopilka extends AppCompatActivity implements View.OnClickListener{
     TextView textView;
     EditText editText;
     int counter;
+    public Button back;
 
 
     @Override
@@ -20,6 +21,15 @@ public class Kopilka extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kopilka);
         counter = 0;
+
+        back = findViewById(R.id.backFromKopilka);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
 
@@ -28,6 +38,7 @@ public class Kopilka extends AppCompatActivity implements View.OnClickListener{
 
         textView = findViewById(R.id.tenge);
         editText = findViewById(R.id.textEnter);
+
 
         if (v.getId() == R.id.addMoney){
             int addResult;

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,10 +16,19 @@ public class NewCalculator extends AppCompatActivity  implements View.OnClickLis
 
     public EditText secondNum;
 
+    public Button back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_calculator);
+        back = findViewById(R.id.backFromCalculator);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 
@@ -27,6 +37,7 @@ public class NewCalculator extends AppCompatActivity  implements View.OnClickLis
         resultText = findViewById(R.id.result2);
         firstNum = findViewById(R.id.firstData2);
         secondNum = findViewById(R.id.secondData2);
+
 
         if (v.getId() == R.id.plusListener) {
             double plusResult;
@@ -43,6 +54,8 @@ public class NewCalculator extends AppCompatActivity  implements View.OnClickLis
         } else {
             resultText.setText("Something went wrong");
         }
+
+
     }
 
 
