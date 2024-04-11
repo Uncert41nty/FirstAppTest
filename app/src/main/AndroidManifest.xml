@@ -13,6 +13,12 @@
         android:theme="@style/Theme.FirstAppTest"
         tools:targetApi="31">
         <activity
+            android:name=".KopilkaTake"
+            android:exported="false" />
+        <activity
+            android:name=".KopilkaAdd"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
@@ -29,8 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".Kopilka"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

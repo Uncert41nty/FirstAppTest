@@ -1,20 +1,51 @@
 package com.example.firstapptest;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-public class Kopilka extends AppCompatActivity implements View.OnClickListener{
+public class Kopilka extends AppCompatActivity {
 
     TextView textView;
-    EditText editText;
     int counter;
     public Button back;
+    public Button addBtn;
+    public Button takeBtn;
+    private static final int LAUNCH_KOPILKA_ADD_ACTIVITY = 88;
+    private static final int LAUNCH_TAKING_MONEY_ACTIVITY = 89;
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        textView = findViewById(R.id.tenge);
+
+        if (requestCode == LAUNCH_KOPILKA_ADD_ACTIVITY) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("adding");
+
+                counter+=Integer.parseInt(result);
+
+                textView.setText(String.valueOf(counter));
+            }
+        }
+
+        if (requestCode == LAUNCH_TAKING_MONEY_ACTIVITY) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("taking");
+
+                counter-=Integer.parseInt(result);
+
+                textView.setText(String.valueOf(counter));
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,28 +61,27 @@ public class Kopilka extends AppCompatActivity implements View.OnClickListener{
             }
         });
 
+
+        addBtn = findViewById(R.id.addMoney);
+        takeBtn = findViewById(R.id.takeMoney);
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Kopilka.this, KopilkaAdd.class);
+                startActivityForResult(intent, LAUNCH_KOPILKA_ADD_ACTIVITY);
+            }
+        });
+
+        takeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Kopilka.this, KopilkaTake.class);
+                startActivityForResult(intent, LAUNCH_TAKING_MONEY_ACTIVITY);
+            }
+        });
     }
 
 
-    @Override
-    public void onClick(View v) {
-
-        textView = findViewById(R.id.tenge);
-        editText = findViewById(R.id.textEnter);
-
-
-        if (v.getId() == R.id.addMoney){
-            int addResult;
-            addResult = counter + Integer.parseInt(editText.getText().toString());
-            counter = addResult;
-            textView.setText(String.valueOf(addResult));
-        } else if (v.getId() == R.id.takeMoney) {
-            int takeResult;
-            takeResult = counter - Integer.parseInt(editText.getText().toString());
-            counter = takeResult;
-            textView.setText(String.valueOf(takeResult));
-        }
-
-    }
 
 }
