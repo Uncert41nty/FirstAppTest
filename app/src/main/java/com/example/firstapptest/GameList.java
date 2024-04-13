@@ -41,6 +41,9 @@ public class GameList extends AppCompatActivity {
     private void fillListView() {
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, games);
+        games.add("Kurwa");
+        games.add("She sings again");
+        games.add("Call of Duty");
 
         gameList = findViewById(R.id.gameList);
         gameList.setAdapter(adapter);
