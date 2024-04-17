@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/itemStudentImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:src="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student name: "
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/favSubject1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First subject level: " />
+
+        <ProgressBar
+            android:id="@+id/firstProgressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="#256D7B"/>
+
+        <TextView
+            android:id="@+id/favSubject2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Second subject level: " />
+
+        <ProgressBar
+            android:id="@+id/secondProgressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="#D84B20"/>
+
+        <TextView
+            android:id="@+id/favSubject3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Third subject level: " />
+
+        <ProgressBar
+            android:id="@+id/thirdProgressbar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="#EAE6CA"/>
+
+    </LinearLayout>
+
+</LinearLayout>

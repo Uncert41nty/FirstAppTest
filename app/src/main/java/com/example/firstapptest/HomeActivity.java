@@ -13,6 +13,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button btn1;
     Button btn2;
     Button btn3;
+    Button btn4;
+    Button btn5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +28,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btn1 = findViewById(R.id.kop1lka);
         btn2 = findViewById(R.id.c4lculator);
         btn3 = findViewById(R.id.gamesActivity);
+        btn4 = findViewById(R.id.animalActivity);
+        btn5 = findViewById(R.id.studentActivity);
 
         btn1.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, AnimalsActivity.class);
+                Intent intent = new Intent(HomeActivity.this, Kopilka.class);
                 startActivity(intent);
             }
         });
@@ -49,6 +53,22 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, GameList.class);
+                startActivity(intent);
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AnimalsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, StudentListViewActitivity.class);
                 startActivity(intent);
             }
         });

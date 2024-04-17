@@ -15,11 +15,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
         <Button
             android:id="@+id/kop1lka"
-            android:layout_width="100dp"
+            android:layout_width="110dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
             android:text="Kopilka"
@@ -39,6 +41,22 @@
             android:layout_height="60dp"
             android:layout_margin="5dp"
             android:text="Game List"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/animalActivity"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="Animals"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/studentActivity"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:text="Students' List"
             android:onClick="onClick"/>
 
     </LinearLayout>
