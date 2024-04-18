@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, Kopilka.class);
+                Intent intent = new Intent(HomeActivity.this, KopilkaActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, NewCalculator.class);
+                Intent intent = new Intent(HomeActivity.this, NewCalculatorActivity.class);
                 startActivity(intent);
             }
         });
@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, StudentListViewActitivity.class);
+                Intent intent = new Intent(HomeActivity.this, CommentsActivity.class);
                 startActivity(intent);
             }
         });

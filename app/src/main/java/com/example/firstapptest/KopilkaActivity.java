@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Kopilka extends AppCompatActivity {
+public class KopilkaActivity extends AppCompatActivity {
 
     TextView textView;
     int counter;
@@ -68,7 +68,7 @@ public class Kopilka extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Kopilka.this, KopilkaAdd.class);
+                Intent intent = new Intent(KopilkaActivity.this, KopilkaAdd.class);
                 startActivityForResult(intent, LAUNCH_KOPILKA_ADD_ACTIVITY);
             }
         });
@@ -76,7 +76,7 @@ public class Kopilka extends AppCompatActivity {
         takeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Kopilka.this, KopilkaTake.class);
+                Intent intent = new Intent(KopilkaActivity.this, KopilkaTake.class);
                 startActivityForResult(intent, LAUNCH_TAKING_MONEY_ACTIVITY);
             }
         });

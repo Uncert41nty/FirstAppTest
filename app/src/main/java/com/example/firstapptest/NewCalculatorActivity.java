@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class NewCalculator extends AppCompatActivity  implements View.OnClickListener{
+public class NewCalculatorActivity extends AppCompatActivity  implements View.OnClickListener{
 
     TextView resultText;
 

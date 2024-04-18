@@ -4,8 +4,8 @@ package com.example.firstapptest;
 import android.graphics.drawable.Drawable;
 
 public class Animal {
-    Drawable image;
-    String name;
+    private Drawable image;
+    private String name;
 
     public Animal(Drawable image, String name) {
         this.image = image;
